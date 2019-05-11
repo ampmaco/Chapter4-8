@@ -12,7 +12,7 @@ class BooksController < ApplicationController
  def create
 	@book = Book.new(book_params)
 		if @book.save
-		redirect_to book_path(@book.id), notice: "#{@book.title} is posted"
+		redirect_to book_path(@book.id), notice: "Book was successfully created."
 		else
 			render action: :new
 		end
@@ -31,7 +31,7 @@ class BooksController < ApplicationController
  def destroy
  	book = Book.find(params[:id])
  	if book.destroy
- 	redirect_to books_path, notice: "#{book.title} is deleted"
+ 	redirect_to books_path, notice: "Book was successfully destroyed."
  	else
  		rendre action: :new
  	end
