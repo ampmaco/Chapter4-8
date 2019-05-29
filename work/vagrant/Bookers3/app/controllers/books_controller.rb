@@ -33,7 +33,7 @@ class BooksController < ApplicationController
  	if book.destroy
  	redirect_to books_path, notice: "Book was successfully destroyed."
  	else
- 		rendre action: :new
+ 		render action: :new
  	end
  end
 
